@@ -1,5 +1,5 @@
 /*===================================*/
-/*Создание заднего фона игрового поля*/
+/*Стилизация заднего фона игрового поля*/
 /*===================================*/
 #full {
     width: 99%;
@@ -20,7 +20,7 @@
     }
 }
 /*===================================*/
-/*Создание стартового блока игры*/
+/*Стилизация стартового блока игры*/
 /*===================================*/
 #start-block {
     width: 100%;
@@ -32,7 +32,7 @@
     left: 0px;
     background-image: url(../img/Start_game_900x500.png);
 }
-/*Создание кнопки start game*/
+/*Стилизацияе кнопки start game*/
 #start-block button {
     margin: 40% auto;
     display: block;
@@ -53,3 +53,182 @@
     -ms-transform: scale(1.2);
     transform: scale(1.2);
 }
+/*===================================*/
+/*Стилизация игрового таймера*/
+/*===================================*/
+
+#time {
+    display: none;
+    position: absolute;
+    margin-top: 10px;
+    left: 40%;
+    font-size: 50px;
+    color: #EDF50B;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#time span {
+    float: right;
+}
+
+#clock {
+    height: 50px;
+    width: 50px;
+    background-image: url(../img/clock.png);
+}
+
+/*===================================*/
+/*Стилизация отображения очков жизни*/
+/*===================================*/
+
+#lifes {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#lifes span {
+    display: grid;
+    height: 50px;
+    width: 50px;
+    background-image: url(../img/lifes.png);
+    float: left;
+}
+
+/*===================================*/
+/*Стилизация отображения очков игры*/
+/*===================================*/
+
+#stars {
+    display: none;
+    font-size: 50px;
+    color: #101BF6;
+    font-weight: bold;
+    font-style: italic;
+    position: absolute;
+    left: 1%;
+    margin-top: 10px;
+}
+
+#stars span {
+    float: right;
+    margin: 5px;
+}
+
+#starsFish {
+    height: 50px;
+    width: 50px;
+    background-image: url(../img/starsFish.png);
+}
+
+
+.fish {
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    left: 96%;
+    display: none;
+}
+
+.first {
+    animation: first 200ms infinite;
+
+}
+
+@keyframes first {
+    0% {background-image: url(../img/fish.png);}
+    100% { background-image: url(../img/fish1.png);}
+}
+
+.star {
+    background-image: url(../img/fish_lifes.png);
+    animation: fish 20s infinite linear;
+}
+
+.bomb {
+    animation: fish 20s infinite linear;
+    animation: bomb 350ms infinite;
+}
+
+@keyframes bomb {
+    0% {background-image: url(../img/fish_bomb.png);}
+    100% {background-image: url(../img/fish_bomb1.png);}
+}
+
+.minus {
+    background-image: url(../img/fish_minus.png);
+    height: 50px;
+    animation: fish 7s infinite linear;
+}
+
+.plus {
+    background-image: url(../img/fish_plus.png);
+    animation: fish 20s infinite linear;
+}
+
+.shark {
+    background-image: url(../img/fish_shark.png);
+    height: 60px;
+    width: 80px;
+    animation: fish 5s infinite linear;
+}
+
+@keyframes fish {
+    0% {}
+    10% {margin-top: -4.5%;}
+    20% {margin-top: -5.5%;}
+    30% {margin-top: -7%;}
+    40% { margin-top: -5%;}
+    50% {margin-top: -3%;}
+    60% {margin-top: 1%;}
+    70% {margin-top: 3%;}
+}
+
+#end {
+    background-image: url(../img/end.png);
+    width: 200px;
+    height: 150px;
+    top: 0;
+    display: none;
+    position: absolute;
+}
+
+#times {
+    width: 50px;
+    height: 50px;
+    top: 100%;
+    display: none;
+    position: fixed;
+    background-image: url(../img/bubbles.png);
+    animation: times 13s infinite linear;
+}
+
+@keyframes times {
+    0% {}
+    10% {margin-left: -4.5%;}
+    20% {margin-left: -5.5%;}
+    30% {margin-left: -8%;}
+    40% {margin-left: -4.5%;}
+    50% { margin-left: -2.5%;}
+    60% { margin-left: 1.5%;}
+    70% {margin-left: 3.5%;}
+    80% { margin-left: 6.5%;}
+    90% {margin-left: 8%;}
+    100% {margin-left: 10em;}
+}
+
+#game-over {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 15% 0%;
+    font-size: 40px;
+    text-align: center;
+    line-height: 70px;
+    position: absolute;
+    font-style: italic;
+    color: yellow;
+}
+
