@@ -1,3 +1,6 @@
+/*===================================*/
+/*Создание заднего фона игрового поля*/
+/*===================================*/
 #full {
     width: 99%;
     height: 97%;
@@ -6,7 +9,7 @@
     background: url(../img/3_backgraund_1900x1055.png), repeat-x 0 100% fixed, linear-gradient(to top, #5080b1, #004e8c) fixed;
     -webkit-animation: water 17s linear infinite;
 }
-
+/*добавляем анимацию движения картинки заднего фона*/
 @keyframes water {
     from {
         background-position: 1000px 100%, 120% 30%, 120% 15%, 0%;
@@ -15,4 +18,38 @@
     to {
         background-position: 0 100%, -200% 10%, -50% 15%, 0%;
     }
+}
+/*===================================*/
+/*Создание стартового блока игры*/
+/*===================================*/
+#start-block {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 0px;
+    background-image: url(../img/Start_game_900x500.png);
+}
+/*Создание кнопки start game*/
+#start-block button {
+    margin: 40% auto;
+    display: block;
+    cursor: pointer;
+    transition: all 0.5s;
+    width: 910px;
+    height: 99px;
+    font-size: 34px;
+    background: transparent;
+    border: none;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../img/start_button_910x99.png);
+}
+/*Добавляем эффект увеличения кнопки start game при наведении на нее*/
+#start-block button:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
