@@ -1,0 +1,18 @@
+#full {
+    width: 99%;
+    height: 97%;
+    position: fixed;
+    cursor: auto;
+    background: url(../img/3_backgraund_1900x1055.png), repeat-x 0 100% fixed, linear-gradient(to top, #5080b1, #004e8c) fixed;
+    -webkit-animation: water 17s linear infinite;
+}
+
+@keyframes water {
+    from {
+        background-position: 1000px 100%, 120% 30%, 120% 15%, 0%;
+    }
+
+    to {
+        background-position: 0 100%, -200% 10%, -50% 15%, 0%;
+    }
+}
