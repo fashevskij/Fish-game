@@ -20,9 +20,10 @@
 
 // создаем и определяем функционал рыбкам
 function creatureFish() {
+    //создаем рыбку
     var fish = document.createElement("div");
     fish.id = "fish";
-    // назначение className
+    // назначение className с помощью рандомного выбора
     if (sec < 5) {
         var act = 1;
     } else {
@@ -31,7 +32,7 @@ function creatureFish() {
     if (sec > 25 || min > 1) {
         act = random(6);
     }
-
+    //исходя из рандомного числа вызываеться нужный класс рыбы на игровое поле
     if (act == 1) {
         fish.className = "fish first";
     } else if (act == 2) {
@@ -90,7 +91,7 @@ function creatureFish() {
                             creatureFish();
                             //когда достигаем 10секунд создаем пузырек каждую секунду
                             if (sec > 0) {
-                                createTimes();
+                                createBubles();
                             }
                         }, 1000);
                     }
@@ -99,7 +100,7 @@ function creatureFish() {
             }, 100);
             fish.className = "Remove";
         }
-    }
+    };
 
     //назначаем исходное положение рыбки 
     setTimeout(function() {

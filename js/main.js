@@ -26,6 +26,7 @@ function startGame() {
     creatureFish();
     // начинаем отсчет времени до окончания игры  
     timerGame();
+
 }
 //удаление всех элементов и вызо функции конца игры
 function over() {
@@ -36,6 +37,7 @@ function over() {
     deleteIFull();
     full.style.cursor = "auto";
     gameOver();
+   
 }
 
 
