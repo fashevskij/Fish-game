@@ -46,7 +46,26 @@ function creatureFish() {
     } else {
         fish.className = "fish shark";
     }
+    
+    let cssFish = getComputedStyle(fish);
+    let leftFish = parseInt(cssFish.Left);
+    let topFish = parseInt(cssFish.top);
 
+    let cssHero = getComputedStyle(fishHero);
+    let leftHero = parseInt(cssHero.left);
+    
+    let topHero = parseInt(cssHero.top);
+
+    setInterval(function(){
+        if(fishHero.offsetLeft + 35 >=  fish.offsetLeft && fishHero.offsetTop - 35 <= fish.offsetTop
+            || fishHero.offsetLeft - 35 >=  fish.offsetLeft && fishHero.offsetTop + 35 >= fish.offsetTop){
+            console.log('aaa');
+        }
+        
+            
+        
+
+    }, 1);
     // функция наведения на рыбку
     fish.onmousemove = function() {
         if (fish.className != "Remove") {
@@ -139,6 +158,9 @@ function creatureFish() {
     if (status != "over") {
         full.appendChild(fish);
     }
+
+
+    
 
 }
 

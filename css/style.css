@@ -201,10 +201,13 @@
   width: 70px;
   left: 96%;
   display: none;
+  
+  
 }
 
 .first {
   animation: first 200ms infinite;
+  -webkit-animation: first 200ms infinite;
 }
 
 @keyframes first {
@@ -298,3 +301,13 @@
   transition: 0.2s;
   } 
   
+
+#fish_hero{
+  display: block;
+  position: absolute;
+  width: 65px;
+  height: 70px;
+  top:50%;
+  left:45%;
+  background: url(../img/88.png);
+}

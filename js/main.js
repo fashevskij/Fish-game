@@ -14,7 +14,7 @@ function startGame() {
     
     status = "start";
     //пояление рыбки вместо курсора
-    full.style.cursor = "../img/url(88.png), auto";
+   addEventListener('keydown',checkClick);
     //удаление стартового блока 
     deleteStartBlock();
     //создание поля с очками
