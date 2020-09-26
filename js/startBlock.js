@@ -1,5 +1,5 @@
+//Функция создания стартового блока 
 function creatureStartBlock() {
-    
     //присваиваем id стартовому блоку для стилизации
     startBlock.id = "start-block";
     //Размещаем стартовый блок на игровом поле
@@ -8,4 +8,5 @@ function creatureStartBlock() {
     startButton.id = "start-button";
     //Размещаем стартовую кнопку в стартовом блоке
     startBlock.appendChild(startButton);
+    
 }

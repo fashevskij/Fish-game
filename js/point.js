@@ -16,4 +16,5 @@ function creaturePoints() {
     var starsFish = document.createElement("span");
     starsFish.id = "starsFish";
     stars.appendChild(starsFish);
+
 }

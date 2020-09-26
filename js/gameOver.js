@@ -4,14 +4,6 @@
         <h3>Вы набрали: 100 очков</h3>
 *********************************************/
 
-var again = document.createElement("button");
-
-
-again.addEventListener('click', function(){
-    console.log('я тебя лдюблю');
-    creatureStartBlock();
-    div.remove();
-});
 
 
 function gameOver() {
@@ -26,10 +18,7 @@ function gameOver() {
     var h3 = document.createElement("h3");
     h3.innerText = "Вы набрали: " + point + " очков" + "\r\n" + "За " + timer.innerText;
     div.appendChild(h3);
-    again.innerText = "PLAY AGAIN";
-again.id = "again";
-full.appendChild(again);
-    again.style.display = 'block';
+
 }
 
 
