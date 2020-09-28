@@ -47,79 +47,70 @@ function creatureFish() {
         fish.className = "fish shark";
     }
     
-    let cssFish = getComputedStyle(fish);
-    let leftFish = parseInt(cssFish.Left);
-    let topFish = parseInt(cssFish.top);
-
-    let cssHero = getComputedStyle(fishHero);
-    let leftHero = parseInt(cssHero.left);
-    
-    let topHero = parseInt(cssHero.top);
-
     setInterval(function(){
-        if(fishHero.offsetLeft + 35 >=  fish.offsetLeft && fishHero.offsetTop - 35 <= fish.offsetTop
-            || fishHero.offsetLeft - 35 >=  fish.offsetLeft && fishHero.offsetTop + 35 >= fish.offsetTop){
-            console.log('aaa');
-        }
-        
+        if((fishHero.offsetLeft + 70) >= (fish.offsetLeft) && (fishHero.offsetTop +70) >= (fish.offsetTop) &&
+            (fishHero.offsetLeft) <= (fish.offsetLeft + 60) && (fishHero.offsetTop) <= (fish.offsetTop + 60)){
             
-        
-
-    }, 1);
-    // функция наведения на рыбку
-    fish.onmousemove = function() {
-        if (fish.className != "Remove") {
-            //если fish bomb отнимаем жизнь
-            if (fish.className == "fish bomb") {
-                quantityLifes = quantityLifes - 1;
-                deleteLifes();
-                if (quantityLifes == 0) {
-                    over();
-                }
-                creatureLifes();
-            } else if (fish.className == "fish star") {
-                // если  fish star добавляем жизнь
-                if (quantityLifes < 10) {
-                    quantityLifes = quantityLifes + 1;
-                }
-                deleteLifes();
-                creatureLifes();
-            } else if (fish.className == "fish minus") {
-                // если fish minus отнимаем 5 очков   
-                point = point - 5;
-            } else if (fish.className == "fish plus") {
-                //если fish plus добавляем 10 очков   
-                point = point + 10;
-            } else if (fish.className == "fish shark") {
-                //если заканчиваем игру 
-                over();
-            } else {
-                point = point + 1;
-            }
-            // отображается увеличенное количество очков 
-            points.innerText = point;
-
-            //удаляем и создаем рыбку заново через 0,1 с
-            setTimeout(function() {
-
-                var beFish = document.querySelector(".fish");
-                if (beFish == null) {
-                    //когда достигаем 3секунд создаем дополнительную рыбку каждую секунду
-                    if (sec > 3) {
-                        setInterval(function() {
-                            creatureFish();
-                            //когда достигаем 10секунд создаем пузырек каждую секунду
-                            if (sec > 0) {
-                                createBubles();
-                            }
-                        }, 1000);
+                if (fish.className != "Remove") {
+                    //если fish bomb отнимаем жизнь
+                    if (fish.className == "fish bomb") {
+                        quantityLifes = quantityLifes - 1;
+                        deleteLifes();
+                        if (quantityLifes == 0) {
+                            over();
+                            clearInterval();
+                        }
+                        creatureLifes();
+                    } else if (fish.className == "fish star") {
+                        // если  fish star добавляем жизнь
+                        if (quantityLifes < 10) {
+                            quantityLifes = quantityLifes + 1;
+                        }
+                        deleteLifes();
+                        creatureLifes();
+                    } else if (fish.className == "fish minus") {
+                        // если fish minus отнимаем 5 очков   
+                        point = point - 5;
+                    } else if (fish.className == "fish plus") {
+                        //если fish plus добавляем 10 очков   
+                        point = point + 10;
+                    } else if (fish.className == "fish shark") {
+                        //если заканчиваем игру 
+                        over();
+                        clearInterval();
+                    } else {
+                        point = point + 1;
                     }
-                    creatureFish();
+                    // отображается увеличенное количество очков 
+                    points.innerText = point;
+                    
+                    //удаляем и создаем рыбку заново через 0,1 с
+
+                    if(status != "over"){
+                        setTimeout(function() {
+        
+                        var beFish = document.querySelector(".fish");
+                        if (beFish == null) {
+                            //когда достигаем 3секунд создаем дополнительную рыбку каждую секунду
+                            if (sec > 3) {
+                                setInterval(function() {
+                                    creatureFish();
+                                    //когда достигаем 10секунд создаем пузырек каждую секунду
+                                    if (sec > 0) {
+                                        createBubles();
+                                    }
+                                }, 1000);
+                            }
+                            creatureFish();
+                        }
+                    }, 100);
+                    fish.className = "Remove";
+                    }
+                    
                 }
-            }, 100);
-            fish.className = "Remove";
-        }
-    };
+        } 
+    }, 100);
+
 
     //назначаем исходное положение рыбки 
     setTimeout(function() {
@@ -134,15 +125,14 @@ function creatureFish() {
             fish.style.display = "block";
             fish.style.left = fish.offsetLeft - 1 + "px";
             if (fish.offsetLeft < 0) {
-                if (fish.className == "fish first" || fish.className == "fish plus") {
+                if (fish.className == "fish first" || fish.className == "fish plus" ) {
                     //deleteFish();
                     fish.remove();
                     creatureFish();
-                    quantityLifes = quantityLifes - 1;
-                    deleteLifes();
                     //если жизни закончились завершаем игру
                     if (quantityLifes == 0) {
                         over();
+                        clearInterval();
                     }
                     creatureLifes();
                     clearInterval(timeFish);
@@ -156,12 +146,10 @@ function creatureFish() {
     }, 1000);
     //если игра не завершена добавляем рыбку
     if (status != "over") {
-        full.appendChild(fish);
+            full.appendChild(fish);
+    }else{
+        clearInterval();
     }
-
-
-    
-
 }
 
 

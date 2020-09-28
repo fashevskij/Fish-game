@@ -14,10 +14,14 @@ function createBubles() {
         }
     }, 10);
     // когда наводим на пузырек появляется подлодка
-    bubles.onmouseover = function() {
-        bubles.remove();
-        createEnd();
-    };
+    setInterval(function(){
+        if((fishHero.offsetLeft + 70) >= (bubles.offsetLeft) && (fishHero.offsetTop +70) >= (bubles.offsetTop) &&
+            (fishHero.offsetLeft) <= (bubles.offsetLeft + 50) && (fishHero.offsetTop) <= (bubles.offsetTop + 50)){
+                bubles.remove();
+                createEnd();
+            }
+        },100);
+    
     //если игра не завершена добавляем пузырек
     if (status != "over") {
         full.appendChild(bubles);

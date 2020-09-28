@@ -8,10 +8,15 @@ function createEnd() {
     var position = 50 + random(1200);
     end.style.left = position + "px";
     //функция наведения на подлодку завершение игры
-    end.onmousemove = function() {
-        end.remove();
-        over();
-    };
+    setInterval(function(){
+    if((fishHero.offsetLeft + 70) >= (end.offsetLeft) && (fishHero.offsetTop +70) >= (end.offsetTop) &&
+            (fishHero.offsetLeft) <= (end.offsetLeft + 200) && (fishHero.offsetTop) <= (end.offsetTop + 150)){
+            end.remove();
+            clearInterval();
+            over();
+            }
+        },100);
+        
     //создаем таймер - каждые 10 милисекунд опускается на 1 рх вниз
     setTimeout(function() {
         var timeEnd = setInterval(function() {

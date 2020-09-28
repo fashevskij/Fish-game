@@ -197,6 +197,7 @@
 
 .fish {
   position: absolute;
+  border-radius:10px;
   height: 70px;
   width: 70px;
   left: 96%;
@@ -305,8 +306,9 @@
 #fish_hero{
   display: block;
   position: absolute;
-  width: 65px;
-  height: 70px;
+  border-radius:10px;
+  width: 67px;
+  height: 67px;
   top:50%;
   left:45%;
   background: url(../img/88.png);
