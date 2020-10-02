@@ -11,10 +11,8 @@ function start() {
 start();
 
 function startGame() {
-    
-    status = "start";
-    //пояление рыбки вместо курсора
-   addEventListener('keydown',checkClick);
+    //событие на клавиатуре для управления рыбкой
+    addEventListener('keydown',checkClick);
     //удаление стартового блока 
     deleteStartBlock();
     //создание поля с очками
@@ -26,19 +24,18 @@ function startGame() {
     //создаем шарик
     creatureFish();
     // начинаем отсчет времени до окончания игры 
+    
 
 }
 //удаление всех элементов и вызо функции конца игры
 function over() {
-    status = "over";
     deleteLifes();
     deletePoints();
     deleteInfoBlock();
     deleteIFull();
-    full.style.cursor = "auto";
     gameOver();
     restart();
-    creatureTimer.remove();
+    clearAll();
 }
 
 

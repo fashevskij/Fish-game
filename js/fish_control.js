@@ -1,9 +1,10 @@
+    
     var fishHero = document.createElement('div');
 
     fishHero.id = "fish_hero";
 
     full.appendChild(fishHero);
-   
+//функция управления рыбкой на поле с помощью клавиш (стрелок)
 function checkClick(event) { 	
     
     let css = getComputedStyle(fishHero);

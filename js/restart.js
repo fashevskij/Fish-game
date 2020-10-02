@@ -15,7 +15,7 @@ function restart(){
         again.addEventListener('click', function(){
             //перезагружаем страницу
             window.location.reload();
-            
+            console.log('click restart');
     });
 }
 

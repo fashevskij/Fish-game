@@ -1,5 +1,5 @@
 
-
+//создание таймера игры
  var creatureTimer = function() {
     //создаем заголовок h2
     var time = document.createElement("h2");
@@ -14,8 +14,8 @@
     clock.id = "clock";
     //добавляем в заголовок счетчик 
     time.appendChild(clock);
-    var clock = setInterval(function() {
-            sec++;
+    setInterval(function() {       
+             sec++;
             if (sec == 60) {
                 sec = 0;
                 min++;
@@ -23,11 +23,10 @@
             // отображение времени на табло
             timer.innerText =  min + " мин " + sec + " сек";
             // если жизни закончились завершаем игру
-            if (quantityLifes == 0) {
-                clearInterval(clock);
+            if (quantityLifes == 0) {         
                 over();
             }
-        }, 1000);
+    }, 1000);
 
 };
 

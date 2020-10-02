@@ -1,12 +1,7 @@
-/*********************************************
-Блок конца игры
-        <h2>GAME OVER</h2>
-        <h3>Вы набрали: 100 очков</h3>
-*********************************************/
-
-
-
+//блок конца игры
 function gameOver() {
+    //статус условно для завеше
+    status = "over";
     var div = document.createElement("div");
     div.id = "game-over";
     full.appendChild(div);
@@ -18,9 +13,15 @@ function gameOver() {
     var h3 = document.createElement("h3");
     h3.innerText = "Вы набрали: " + point + " очков" + "\r\n" + "За " + timer.innerText;
     div.appendChild(h3);
-
 }
-
+//очистка всех таймеров в игре
+function clearAll() {
+    //перебор всех таймеров
+    for (var i = setTimeout(function() {}, 0); i > 0; i--) {
+        window.clearInterval(i);
+    if (window.cancelAnimationFrame) window.cancelAnimationFrame(i);
+    }
+}
 
 /**********************************************
 Удаление функций

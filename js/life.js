@@ -11,6 +11,6 @@ function creatureLifes() {
     while (currentQuantityLifes < quantityLifes) {
         span = document.createElement("span");
         lifes.appendChild(span);
-        currentQuantityLifes = currentQuantityLifes + 1;
+        currentQuantityLifes ++;
     }
 }

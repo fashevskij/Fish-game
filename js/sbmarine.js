@@ -8,29 +8,27 @@ function createEnd() {
     var position = 50 + random(1200);
     end.style.left = position + "px";
     //функция наведения на подлодку завершение игры
-    setInterval(function(){
+    let eatFish = setInterval(function(){
     if((fishHero.offsetLeft + 70) >= (end.offsetLeft) && (fishHero.offsetTop +70) >= (end.offsetTop) &&
             (fishHero.offsetLeft) <= (end.offsetLeft + 200) && (fishHero.offsetTop) <= (end.offsetTop + 150)){
+            quantityLifes = 0;
             end.remove();
-            clearInterval();
             over();
-            }
-        },100);
-        
+            }          
+        },100);   
     //создаем таймер - каждые 10 милисекунд опускается на 1 рх вниз
-    setTimeout(function() {
-        var timeEnd = setInterval(function() {
+    
+        setInterval(function() {
             end.style.display = "block";
             end.style.top = end.offsetTop + 1 + "px";
             //если подлодка достигла низа экрана убрать ее
             if (end.offsetTop > 800) {
                 end.remove();
             }
-
         }, 10);
-    }, 10);
+
     //если игра не завершена добавляем подлодку на поле
-    if (status != "over") {
-        full.appendChild(end);
-    }
+    
+    full.appendChild(end);
+    
 }
