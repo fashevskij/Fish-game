@@ -11,6 +11,8 @@ function start() {
 start();
 
 function startGame() {
+    document.querySelector('.menu__box').style.display = "none";
+    document.querySelector('.hamburger-menu').style.display = "none";
     //событие на клавиатуре для управления рыбкой
     addEventListener('keydown',checkClick);
     //удаление стартового блока 

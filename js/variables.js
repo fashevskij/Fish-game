@@ -10,7 +10,11 @@ let startBlock = document.createElement("div");
 // помещаем в переменную стартовый кнопку
 let startButton = document.createElement("button");
 
-var fish;
+//рыбки
+let fish;
+let count = 1;
+let count_fish = 0;
+let menu = document.getElementsByClassName('menu__item');
 
 /*********************************************/
 //переменные для игры
@@ -24,10 +28,10 @@ let points = null;
 let point = 0;
 //подлодки
 let end = 0;
-// рыбки
-//let fish = 0;
+
+
 //пузырьки
-let bubles
+let bubles;
 //статус для вызова окончания игры
 var status = "open";
 //делаем видимыми все элементы игры и скрываем стартовый блок
