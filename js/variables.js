@@ -12,9 +12,9 @@ let startButton = document.createElement("button");
 
 //рыбки
 let fish;
-let count = 1;
-let count_fish = 0;
-let menu = document.getElementsByClassName('menu__item');
+let count = 1;//количество для условий выбора сложности
+let count_fish = 0;//количиство рыбок на поле
+let menu = document.getElementsByClassName('menu__item');//меню выбора сложн
 
 /*********************************************/
 //переменные для игры

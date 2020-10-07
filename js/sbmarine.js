@@ -22,6 +22,7 @@ function createEnd() {
     
         //создаем таймер - каждые 10 милисекунд опускается на 1 рх вниз
         setInterval(function() {
+            
             end.style.display = "block";
             end.style.top = end.offsetTop + 3 + "px";
             //если подлодка достигла низа экрана убрать ее

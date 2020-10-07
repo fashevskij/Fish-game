@@ -2,13 +2,19 @@
 /*Стилизация заднего фона игрового поля*/
 /*===================================*/
 #full {
-  width: 99%;
-  height: 97%;
+  border-radius:3%;
+  width: 98%;
+  height: 98%;
+  top:1%;
+  left: 1%;
   position: fixed;
   cursor: auto;
-  background: url(../img/3_backgraund_1900x1055.png), repeat-x 0 100% fixed,
-    linear-gradient(to top, #5080b1, #004e8c) fixed;
+  background: url(../img/3_backgraund_1900x1055.png), repeat-x 0 100% fixed,    linear-gradient(to top, #5080b1, #004e8c) fixed;
   -webkit-animation: water 17s linear infinite;
+  -webkit-border-radius:3%;
+  -moz-border-radius:3%;
+  -ms-border-radius:3%;
+  -o-border-radius:3%;
 }
 /*добавляем анимацию движения картинки заднего фона*/
 @keyframes water {
@@ -24,6 +30,7 @@
 /*Стилизация стартового блока игры*/
 /*===================================*/
 #start-block {
+  border-radius:3%;
   width: 100%;
   height: 100%;
   background: #fff;
@@ -131,7 +138,7 @@
   height: 50px;
   top: 100%;
   display: none;
-  position: fixed;
+  position: absolute;
   background-image: url(../img/bubbles.png);
   animation: bubles 13s infinite linear;
   -webkit-animation: bubles 13s infinite linear;
@@ -261,7 +268,7 @@
   0% {
   }
   10% {
-    margin-top: -4.5%;
+    margin-top: -9.5%;
   }
   20% {
     margin-top: -5.5%;
@@ -276,18 +283,18 @@
     margin-top: -3%;
   }
   60% {
-    margin-top: 1%;
+    margin-top: 2%;
   }
   70% {
-    margin-top: 3%;
+    margin-top: 5%;
   }
 }
-
+/*стилизация кнопки играть еще раз*/
 #again {
  
   width: 200px;
   height: 50px;
-  top:62%;
+  top:72%;
   left:45%;
   position: absolute;
   color: white;
@@ -302,7 +309,11 @@
   transition: 0.2s;
   } 
   
+  
 
+
+
+/*стилизация главной рыбки*/
 #fish_hero{
   display: block;
   position: absolute;
@@ -314,39 +325,53 @@
   background: url(../img/88.png);
 }
 
-
+/*стилизация окна выбора сложности*/
 #menu__toggle {
   opacity: 0;
 }
 
 #menu__toggle:checked ~ .menu__btn > span {
   transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
 }
 #menu__toggle:checked ~ .menu__btn > span::before {
   top: 0;
   transform: rotate(0);
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
 }
 #menu__toggle:checked ~ .menu__btn > span::after {
   top: 0;
   transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
 }
 #menu__toggle:checked ~ .menu__box {
   visibility: visible;
-  left: 0;
+  left: 0%;
 }
 
 .menu__btn {
   display: flex;
   align-items: center;
   position: fixed;
-  top: 20px;
-  left: 20px;
-
-  width: 26px;
-  height: 26px;
-
+  top: 25px;
+  left: 40px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   z-index: 2;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  -ms-border-radius:50%;
+  -o-border-radius:50%;
 }
 
 .menu__btn > span,
@@ -373,28 +398,29 @@
 
 
 .menu__box {
+  border-radius:20px;
   display: block;
   position: fixed;
   visibility: hidden;
-  top: 0%;
+  top: 1%;
   left: -100%;
-  
   width: 200px;
-  height: 100%;
+  height: 81%;
   z-index: 1;
   margin: 0;
   padding: 80px 0;
-
   list-style: none;
-
-  background-color: transparent;
-  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
-
+  background-color: rgba(133, 215, 219, 0.37);
+  box-shadow: 1px 0px 6px rgba(62, 137, 156, 0.2);
   transition-duration: .25s;
+  -webkit-border-radius:20px;
+  -moz-border-radius:20px;
+  -ms-border-radius:20px;
+  -o-border-radius:20px;
 }
 
 .menu__item {
-  background-color: transparent;
+  background-color: rgba(64, 224, 64, 0.199);
   border-radius:30px;
   display: block;
   

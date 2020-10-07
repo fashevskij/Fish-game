@@ -16,7 +16,7 @@ function checkClick(event) {
     switch(event.keyCode){ 					
         case 37: //при нажатии на стрелку в лево
             if (left > 50)//при условии что мы не можем зайти за края ээкрана				
-            fishHero.style.left = left - 25 + "px";//двигаемся  с скороситью 50 px на нажатие 
+            fishHero.style.left = left - 25  + "px";//двигаемся  с скороситью 50 px на нажатие 
             break; 					
         case 38: 
             if (top > 50)						
